@@ -1,0 +1,18 @@
+import sqlite3 as sql
+con=sql.connect('database3.sqlite3')
+con.execute('''drop table employee3''')
+con.execute('''create table employee3(employee_id int,firstname varchar2(50),lastname varchar2(50),email varchar2(200),phone_number int,hiredate varchar2(15),job_id int,salary int,commision_pct int,manager_id int,department_id varchar2(10))''')
+con.execute('''insert into employee3 values(101,'Bhanu','Prakash','pbhanu.prakash@gmail.com',8715324510,'20-apr-2014',21,35000,5000,201,'cse01')''')
+con.execute('''insert into employee3 values(102,'Naresh','G','naresh@gmail.com',9661458439,'12-jan-2010',23,25000,2500,201,'cse01')''')
+con.execute('''insert into employee3 values(103,'komalesh','v','v.komalesh@gmail.com',9019234428,'12-dec-2010',31,40000,6000,301,'cb02')''')
+con.execute('''insert into employee3 values(104,'raju','r','rr.aju@gmail.com',7623142110,'22-oct-2017',32,38000,5000,302,'db01')''')
+con.execute('''insert into employee3 values(105,'kranthi','kumar','kranthi.kakarla@gmail.com',8756632210,'07-dec-2010',31,20000,2000,301,'cb02')''')
+con.execute('''insert into employee3 values(106,'kedhar','t','v.kedhareswari.t@gmail.com',9763221568,'02-feb-2010',23,20000,1000,205,'cse01')''')
+con.execute('''insert into employee3 values(107,'rahul','r','rrahul.a08@gmail.com',7842681797,'28-aug-2021',34,15000,500,302,'db01')''')
+con.execute('''insert into employee3 values(108,'vamsi','l','vamsi123@gmail.com',1234567890,'05-jan-2020',28,10000,350,909,'cs15')''')
+con.execute('''insert into employee3 values(109,'pardhav','p','pardhav0@gmail.com',7546491797,'27-aug-2020',30,15000,500,341,'cs21')''')
+con.execute('''insert into employee3 values(110,'swami','m','swami9@gmail.com',5637861797,'25-sep-2021',39,12000,400,362,'ec76')''')
+con.commit()
+query=con.execute('''select * from employee3''')
+for i in query:
+	print(i)   
